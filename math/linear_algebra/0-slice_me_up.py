@@ -1,15 +1,8 @@
 #!/usr/bin/env python3
-import numpy as np
-
-def slice_me_up(arr):
-    # Slice the first two rows
-    slice1 = arr[:2, :]
-
-    # Slice the last two rows
-    slice2 = arr[-2:, :]
-
-    # Slice the middle two columns
-    middle_col_index = arr.shape[1] // 2
-    slice3 = arr[:, middle_col_index-1:middle_col_index+1]
-
-    return slice1, slice2, slice3
+arr = [9, 8, 2, 3, 9, 4, 1, 0, 3]
+arr1 = arr[:2]
+arr2 = arr[-5:]
+arr3 = arr[1:6]
+print("The first two numbers of the array are: {}".format(arr1))
+print("The last five numbers of the array are: {}".format(arr2))
+print("The 2nd through 6th numbers of the array are: {}".format(arr3))
