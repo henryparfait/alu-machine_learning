@@ -15,15 +15,12 @@ def definiteness(matrix):
         return None
 
     eigenvalues = np.linalg.eigvals(matrix)
-    
-    # Check for empty matrix or calculation issues
+
     if eigenvalues.size == 0:
         return None
 
-    # Handle tolerance for floating point comparisons
     tol = 1e-10
-    
-    # Count positive, negative, and zero eigenvalues
+
     positive = np.sum(eigenvalues > tol)
     negative = np.sum(eigenvalues < -tol)
     zero = np.sum(np.abs(eigenvalues) <= tol)
@@ -40,4 +37,4 @@ def definiteness(matrix):
     if positive > 0 and negative > 0:
         return "Indefinite"
 
-    return "Indefinite" # Fallback for edge cases where strict > 0 logic might miss
+    return None
