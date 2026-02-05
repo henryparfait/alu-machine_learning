@@ -1,7 +1,17 @@
 #!/usr/bin/env python3
+"""_summary_
+"""
+
 
 def add_arrays(arr1, arr2):
-    """Adds two arrays element-wise"""
-    if len(arr1) != len(arr2):
+    """_summary_
+
+    Args:
+        matrix (list): _description_
+    """
+    if len(arr2) != len(arr1):
         return None
-    return [a + b for a, b in zip(arr1, arr2)]
+    arr_result = []
+    for x in range(len(arr1)):
+        arr_result.append(arr1[x]+arr2[x])
+    return arr_result

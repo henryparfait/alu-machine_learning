@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
-import numpy as np
+"""_summary_
+"""
+
 
 def np_shape(matrix):
-    """Calculates the shape of a numpy.ndarray"""
+    """
+    Multiplies two matrices
+    """
     return matrix.shape

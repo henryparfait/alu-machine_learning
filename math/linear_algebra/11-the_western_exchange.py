@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
-import numpy as np
+"""_summary_
+"""
+
 
 def np_transpose(matrix):
-    """Transposes a numpy.ndarray"""
-    return matrix.transpose()
+    """
+    Multiplies two matrices
+    """
+    return matrix.T
