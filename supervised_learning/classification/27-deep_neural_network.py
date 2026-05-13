@@ -80,7 +80,8 @@ class DeepNeuralNetwork:
             if i == self.__L:
                 # Softmax for the output layer
                 t = np.exp(Z)
-                self.__cache["A" + str(i)] = t / np.sum(t, axis=0, keepdims=True)
+                self.__cache["A" + str(i)] = t / np.sum(t, axis=0,
+                keepdims=True)
             else:
                 # Sigmoid for hidden layers
                 self.__cache["A" + str(i)] = 1 / (1 + np.exp(-Z))
