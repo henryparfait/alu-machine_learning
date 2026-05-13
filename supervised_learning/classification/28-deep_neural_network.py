@@ -85,8 +85,7 @@ class DeepNeuralNetwork:
             Z = np.matmul(W, A_prev) + b
             if i == self.__L:
                 t = np.exp(Z)
-                self.__cache["A" + str(i)] = t / np.sum(t, axis=0,
-                                                       keepdims=True)
+                self.__cache["A" + str(i)] = t / np.sum(t, axis=0, keepdims=True)
             else:
                 if self.__activation == 'sig':
                     self.__cache["A" + str(i)] = 1 / (1 + np.exp(-Z))
