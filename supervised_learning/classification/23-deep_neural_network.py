@@ -191,4 +191,3 @@ class DeepNeuralNetwork:
             plt.show()
 
         return self.evaluate(X, Y)
-                
