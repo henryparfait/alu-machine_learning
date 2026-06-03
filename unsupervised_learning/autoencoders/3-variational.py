@@ -15,9 +15,11 @@ def autoencoder(input_dims, hidden_layers, latent_dims):
 
     def sampling(args):
         """Reparameterization trick: z = mean + exp(log_var / 2) * eps."""
-        mean, log_var = args
-        eps = keras.backend.random_normal(shape=keras.backend.shape(mean))
-        return mean + keras.backend.exp(log_var / 2) * eps
+        z_mean, z_log_var = args
+        batch = keras.backend.shape(z_mean)[0]
+        dim = keras.backend.int_shape(z_mean)[1]
+        eps = keras.backend.random_normal(shape=(batch, dim))
+        return z_mean + keras.backend.exp(0.5 * z_log_var) * eps
 
     z = keras.layers.Lambda(sampling)([mean, log_var])
     encoder = keras.Model(inputs, [z, mean, log_var])
